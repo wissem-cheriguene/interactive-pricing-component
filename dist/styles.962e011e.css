@@ -1,0 +1,337 @@
+@charset "UTF-8";
+/*─────────────────────────────────────────────────────────────────────────────────────────────────*/
+/*─────────────────────────────────────────────────────────────────────────────────────────────────*/
+/*─
+/*─                                                                                      RESET
+/*─
+/*─────────────────────────────────────────────────────────────────────────────────────────────────*/
+/*─────────────────────────────────────────────────────────────────────────────────────────────────*/
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: none;
+  /*─ Debug font size on iphone when landscape orientation ─*/
+  -webkit-font-smoothing: subpixel-antialiased;
+  /*─ Debug safari font weight when fixed element on the page ─*/
+  -webkit-font-smoothing: antialiased;
+  /*─ idem : Debug safari font weight when fixed element on the page ─*/
+}
+
+html, body, nav, header, footer, div, span,
+h1, h2, h3, p,
+a, img,
+ul, li,
+table, form, label, input, textarea, select, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+input, textarea, select, button {
+  display: block;
+  box-sizing: border-box;
+  border-radius: 0;
+  outline: none;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+input:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+input[type=submit]:hover,
+button:hover {
+  cursor: pointer;
+}
+
+input::-ms-clear {
+  display: none;
+  /*─ IE11 → remove cross to close ─*/
+}
+
+textarea {
+  overflow: auto;
+  /*─ Hide scroll bar on IE ─*/
+}
+
+a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+img, video, svg, picture {
+  display: block;
+}
+
+img, video {
+  width: 100%;
+  height: auto;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  background: #fafbff;
+}
+
+.container {
+  width: 100%;
+  text-align: center;
+}
+
+.intro {
+  height: 50vh;
+  background: url("/bg-pattern.433a5090.svg");
+  border-radius: 0px 0px 0px 50%;
+  text-align: center;
+}
+.intro__content {
+  background: url("/pattern-circles.d7b088aa.svg") no-repeat center;
+  padding: 4rem 1rem;
+}
+.intro__content h1 {
+  font-weight: 800;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #293356;
+}
+.intro__content p {
+  color: #858fad;
+}
+
+.main {
+  padding: 0 1rem;
+}
+.main .card {
+  border-radius: 7px;
+  color: #858fad;
+  background: white;
+  max-width: 700px;
+  margin: auto;
+  transform: translateY(-37%);
+  box-shadow: 1px 2px 13px #cdd7ee;
+}
+.main .card-up {
+  padding: 2rem 1rem;
+  border-bottom: 1px solid #cdd7ee;
+}
+.main .card-down {
+  padding: 2rem 1rem;
+}
+.main .card__title {
+  text-transform: uppercase;
+  color: #858fad;
+  font-weight: 800;
+  letter-spacing: 1.5;
+  margin-bottom: 2rem;
+}
+.main .card__slider-container {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.main .card__slider-container:hover {
+  transition: ease-in-out all 0.5s;
+  opacity: 0.7;
+}
+.main .card__slider-container .slider {
+  -webkit-appearance: none;
+  background: linear-gradient(to right, #82CFD0 0%, #82CFD0 50%, #eaeefb 50%, #eaeefb 100%);
+  appearance: none;
+  width: 100%;
+  /* Full-width */
+  height: 10px;
+  /* Specified height */
+  outline: none;
+  /* Remove outline */
+  border-radius: 10px;
+}
+.main .card__slider-container .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 23px;
+  height: 24px;
+  padding: 1.2em;
+  background: url("/icon-slider.58b63c3e.svg") no-repeat center center;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #10d5c2;
+}
+.main .card__slider-container .slider::-moz-range-thumb {
+  width: 23px;
+  height: 25px;
+  border: 0;
+  background: url("/icon-slider.58b63c3e.svg") no-repeat;
+  cursor: pointer;
+}
+.main .card__slider-container .slider::-moz-range-progress {
+  background: #10d5c2;
+}
+.main .card__monthly-price {
+  margin-bottom: 2rem;
+}
+.main .card__monthly-price span {
+  font-weight: 800;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: #293356;
+}
+.main .card__toogle-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  font-size: 0.8rem;
+}
+.main .card__toogle-button .toogle {
+  display: flex;
+  height: 30px;
+  width: 60px;
+  border-radius: 20px;
+  background-color: #cdd7ee;
+  position: relative;
+  cursor: pointer;
+}
+.main .card__toogle-button .toogle:hover {
+  background: #10d5c2;
+  transition: ease-in-out all 0.5s;
+}
+.main .card__toogle-button .toogle::after {
+  position: absolute;
+  top: 5px;
+  left: 6px;
+  content: "";
+  background-color: white;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+}
+.main .card__toogle-button .toogle.toogle--on::after {
+  position: absolute;
+  left: 36px;
+}
+.main .card__toogle-button p:nth-child(1) {
+  padding-right: 10px;
+}
+.main .card__toogle-button p:nth-child(3) {
+  padding-left: 10px;
+}
+.main .card__toogle-button p:nth-child(3) span {
+  padding: 3px 10px;
+  border-radius: 15px;
+  color: #ff8c66;
+  background-color: #feece7;
+}
+.main .card__pros-info {
+  display: flex;
+  flex-direction: column;
+}
+.main .card__pros-info p {
+  margin-bottom: 1rem;
+}
+.main .card__pros-info p::before {
+  content: url("/icon-check.bc1a2fad.svg");
+  padding-right: 1rem;
+}
+.main .card__pros-info p:last-child {
+  margin-bottom: 2rem;
+}
+.main .card__button {
+  color: #bdccff;
+  background-color: #293356;
+  padding: 1rem 3rem;
+  border-radius: 30px;
+  margin: auto;
+}
+.main .card__button:hover {
+  color: white;
+  transition: all 0.5s ease-in-out;
+}
+
+@media (min-width: 760px) {
+  .intro h1 {
+    font-size: 2rem;
+  }
+  .intro p {
+    display: inline;
+  }
+
+  .main .card {
+    transform: translateY(-55%);
+  }
+  .main .card .card-up {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 2rem 3rem;
+  }
+  .main .card__title {
+    width: 50%;
+  }
+  .main .card__monthly-price {
+    order: 2;
+    width: 50%;
+  }
+  .main .card__slider-container {
+    order: 3;
+    flex-grow: 2;
+  }
+  .main .card__toogle-button {
+    order: 4;
+    width: 100%;
+    margin-bottom: 0;
+  }
+  .main .card__toogle-button span::after {
+    content: " discount";
+  }
+  .main .card .card-down {
+    display: flex;
+    padding: 2rem 3rem;
+  }
+  .main .card__pros-info {
+    width: 50%;
+  }
+  .main .card__pros-info p {
+    display: flex;
+    align-items: center;
+  }
+  .main .card__pros-info p:last-child {
+    margin-bottom: 0;
+  }
+  .main .card__button {
+    margin: auto 0 auto auto;
+  }
+}
+
+/*# sourceMappingURL=/styles.962e011e.css.map */
