@@ -1,0 +1,297 @@
+// # Front-end Style Guide
+
+// ## Layout
+
+// The designs were created to the following widths:
+
+// - Mobile: 375px
+// - Desktop: 1440px
+
+// ## Colors
+
+// ### Primary
+
+// OK Soft Cyan (Full Slider Bar): hsl(174, 77%, 80%)
+// OK Strong Cyan (Slider Backround): hsl(174, 86%, 45%)
+// OK Light Grayish Red (Discount Background): hsl(14, 92%, 95%)
+// OK Light Red (Discount Text): hsl(15, 100%, 70%)
+// OK Pale Blue (CTA Text): hsl(226, 100%, 87%)
+
+// ### Neutral
+
+// OK White (Pricing Component Background): hsl (0, 0%, 100%)
+// - Very Pale Blue (Main Background): hsl(230, 100%, 99%)
+// OK Light Grayish Blue (Empty Slider Bar): hsl(224, 65%, 95%)
+// OK Light Grayish Blue (Toggle Background): hsl(223, 50%, 87%)
+// OK Grayish Blue (Text): hsl(225, 20%, 60%)
+// - Dark Desaturated Blue (Text & CTA Background): hsl(227, 35%, 25%)
+
+// ## Typography
+
+// ### Body Copy
+
+// OK Font size (Introductory Paragraph): 15px
+
+// ### Font
+
+// OK Family: [Manrope](https://fonts.google.com/specimen/Manrope)
+// OK Weights: 600, 800
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
+
+body {
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  background: hsl(230, 100%, 99%);
+}
+
+.container {
+  width: 100%;
+  text-align: center;
+}
+
+.intro {
+  height: 50vh;
+  background: url('images/bg-pattern.svg');
+  border-radius: 0px 0px 0px 50%;
+  text-align: center;
+  &__content {
+    background: url('images/pattern-circles.svg') no-repeat center;
+    
+    padding: 4rem 1rem;
+    h1 {
+      font-weight: 800;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      color: hsl(227, 35%, 25%);
+    }
+    p {
+      color: hsl(225, 20%, 60%);
+    }
+  }
+}
+
+.main {
+  padding: 0 1rem;
+  .card {
+    border-radius: 7px;
+    color: #858fad;
+    background: white;
+    max-width: 700px;
+    margin: auto;
+    transform: translateY(-37%);
+    box-shadow: 1px 2px 13px #cdd7ee;
+
+    &-up {
+      padding: 2rem 1rem;
+      border-bottom: 1px solid #cdd7ee;
+    }
+    &-down {
+      padding: 2rem 1rem;
+    }
+
+    &__title {
+      text-transform: uppercase;
+      color: hsl(225, 20%, 60%);
+      font-weight: 800;
+      letter-spacing: 1.5;
+      margin-bottom: 2rem;
+    }
+    &__slider-container{
+      width: 100%;
+      margin-bottom: 2rem;
+      &:hover{
+        transition: ease-in-out all .5s;
+        opacity: .7;
+      }
+      .slider {
+        -webkit-appearance: none; 
+        background: linear-gradient(to right, #82CFD0 0%, #82CFD0 50%, hsl(224, 65%, 95%) 50%, hsl(224, 65%, 95%) 100%);
+        // background-color: hsl(224, 65%, 95%);
+        appearance: none;
+        width: 100%; /* Full-width */
+        height: 10px; /* Specified height */
+        outline: none; /* Remove outline */
+        border-radius: 10px;
+        
+      }
+      .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 23px;
+        height: 24px;
+        padding: 1.2em;
+        background: url('images/icon-slider.svg') no-repeat center center;
+        border-radius: 50%;
+        cursor: pointer;
+        background-color: hsl(174, 86%, 45%);
+      }
+      
+      .slider::-moz-range-thumb {
+        width: 23px;
+        height: 25px;
+        border: 0;
+        background: url('images/icon-slider.svg') no-repeat;
+        cursor: pointer;
+      }
+
+      .slider::-moz-range-progress {
+        background: hsl(174, 86%, 45%); // Mozzila only
+      }  
+
+    }
+    &__monthly-price{
+      margin-bottom: 2rem;
+      span {
+        font-weight: 800;
+        margin-bottom: 1rem;
+        font-size: 2.5rem;
+        color: hsl(227, 35%, 25%);
+      }
+    }
+    &__toogle-button{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      font-size: .8rem;
+      .toogle{
+        display: flex;
+        height: 30px;
+        width: 60px;
+        border-radius: 20px;
+        background-color: hsl(223, 50%, 87%);
+        position: relative; 
+        cursor: pointer;
+        &:hover {
+          background: hsl(174, 86%, 45%);
+          transition: ease-in-out all .5s;
+        }
+        &::after {
+          position: absolute;
+          top: 5px;
+          left: 6px;
+          content: "";
+          background-color: white;
+          height: 20px;
+          width: 20px;
+          border-radius: 10px;
+        }
+        &.toogle--on::after {
+          position: absolute;
+          left: 36px;
+        }
+
+        }   
+      p:nth-child(1) {
+        padding-right: 10px;
+      }
+      p:nth-child(3) {
+        padding-left: 10px;
+        span {
+          padding: 3px 10px;
+          border-radius: 15px;
+          color: hsl(15, 100%, 70%);
+          background-color: hsl(14, 92%, 95%);
+        }
+      }
+
+
+    }
+    &__pros-info{
+      display: flex;
+      flex-direction: column;
+
+      p {
+        margin-bottom: 1rem;
+        &::before {
+          content: url('images/icon-check.svg');
+          padding-right: 1rem;
+        }
+        &:last-child {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+    &__button{
+      color: hsl(226, 100%, 87%);
+      background-color: hsl(227, 35%, 25%);
+      padding: 1rem 3rem;
+      border-radius: 30px;
+      margin: auto;
+      &:hover {
+        color: white;
+        transition: all .5s ease-in-out;
+      }
+    }
+  }
+}
+
+
+@media (min-width: 760px) {
+  .intro {
+    h1 {
+      font-size: 2rem;
+    }
+    p {
+      display: inline;
+    }
+  }
+
+  .main {
+    .card {
+      transform: translateY(-55%);
+      .card-up {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 2rem 3rem;
+      }
+      &__title {
+        width: 50%;
+      }
+      &__monthly-price {
+        order: 2;
+        width: 50%;
+      }
+      &__slider-container {
+        order: 3;
+        flex-grow: 2;
+      }
+
+      &__toogle-button {
+        order: 4;
+        width: 100%;
+        margin-bottom: 0;
+        span::after {
+          content: ' discount';
+        }
+      }
+  
+      .card-down {
+        display: flex;
+        padding: 2rem 3rem;
+      }  
+
+      &__pros-info {
+        width: 50%;
+        p {
+          display: flex;
+          align-items: center;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      &__button {
+        margin: auto 0 auto auto;
+      }
+      
+    }
+  }
+    
+
+}
+

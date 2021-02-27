@@ -1,39 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <title>interactive-pricing-component</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="src/styles.scss"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5">
+    <meta name="format-detection" content="telephone=no">
+    <!-- Title -->
+    <title>Quick Parcel Project</title>
+    <!-- Favicon -->
+    <meta name="theme-color" content="#fff">
+    <link rel="icon" type="image/png" href="src/images/favicon-32x32.png"/>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive pricing component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
+
 <body>
 
-  Simple, traffic-based pricing
-  Sign-up for our 30-day trial. No credit card required. 
+<div class="container">
+    <header class="intro">
+        <div class="intro__content">
+            <h1>Simple, traffic-based pricing</h1>
+            <p>Sign-up for our 30-day trial.</p>
+            <p>No credit card required.</p>
+        </div>
+    </header>
+    <main class="main">
+        <section class="card">
+            <div class="card-up">
+                <h1 class="card__title"><span>100K</span> pageviews</h1>
+                <div class="card__slider-container">
+                    <input type="range" class="slider" min="0" max="4" data-value="2">
+                </div>
+                <p class="card__monthly-price"><span>$16.00</span>/ month</p>
+                <div class="card__toogle-button">
+                    <p>Monthly Billing</p>
+                    <div class="toogle"></div>
+                    <p>Yearly Billing <span>-25%</span></p>
+                </div>
+            </div>
+            <div class="card-down">
+                <div class="card__pros-info">
+                    <p>Unlimited websites</p>
+                    <p>100% data ownership</p>
+                    <p>Email reports</p>
+                </div>
+                <button class="card__button">Start my trial</button>
+            </div>
+        </section>
+    </main>
+</div>
 
-  Pageviews
-  $ /month
+<script src="src/index.js"></script>
 
-  Monthly Billing
-  Yearly Billing 25% discount
-
-  Unlimited websites
-  100% data ownership
-  Email reports
-
-  Start my trial
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
 </body>
 </html>
